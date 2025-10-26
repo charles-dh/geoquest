@@ -494,9 +494,15 @@ Tokyo</textarea>
 
         // Calculate score based on distance (max 100 points per city)
         function calculateScore(distance) {
-            if (distance < 50) return 100;
-            if (distance > 5000) return 0;
-            return Math.round(100 - (distance / 5000) * 100);
+            // 0 points at 500km or more
+            if (distance >= 500) return 0;
+            
+            // Quadratic scoring: score decreases faster as you get further away
+            // Formula: 100 * (1 - (distance/500)²)
+            const normalizedDistance = distance / 500;
+            const score = 100 * (1 - Math.pow(normalizedDistance, 2));
+            
+            return Math.round(score);
         }
 
         // Sound effects

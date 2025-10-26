@@ -21,10 +21,17 @@ An interactive geography learning game that challenges players to locate major c
 
 ## 🎯 Scoring System
 
-- **100 points**: Within 50 km of the actual location
-- **0 points**: More than 5000 km away
-- Points scale linearly between these distances
+- **100 points**: Exact location (0 km away)
+- **0 points**: 500 km or more away
+- **Quadratic scoring**: Points decrease quadratically as distance increases
+  - 100 km away ≈ 96 points
+  - 200 km away ≈ 84 points
+  - 300 km away ≈ 64 points
+  - 400 km away ≈ 36 points
+  - 500 km away = 0 points
 - Maximum possible score: **1000 points** (10 cities × 100 points)
+
+The quadratic formula means you need to be quite accurate to score well - being twice as far away costs you much more than twice the points!
 
 ## 🏙️ Cities Included
 
